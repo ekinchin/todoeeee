@@ -19,19 +19,10 @@
   flex-direction:row;
 }
 
-.task .message .date,
 .task .message .text{
   border:1px solid lightgrey;
   border-radius: 10px;
   padding: 1%;
-}
-
-.task .message .date{
-  width:19%;
-  margin-right: 1%;
-}
-.task .message .text{
-  width:80%;
 }
 
 .task button{

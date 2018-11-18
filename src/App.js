@@ -23,7 +23,6 @@ class App extends Component {
           ...prevState.todos,
           {
             id:new Date().getTime(),
-            date:new Date().toLocaleString(),
             text:prevState.input,
             isDone:false
           }

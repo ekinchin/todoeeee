@@ -5,7 +5,6 @@ const Todo = ({todo, onDone, onRemove}) => {
   return (
     <div className={todo.isDone?"task isDone":"task"}>          
       <div className="message">
-        <div className="date">{todo.date}</div>
         <div className="text">{todo.text}</div>
       </div>
       <div className="check">
