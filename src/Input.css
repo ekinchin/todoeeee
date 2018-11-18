@@ -1,0 +1,22 @@
+.create{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  padding-bottom: 20px;
+}
+
+.create input{
+  border:1px solid lightgrey;
+  border-radius: 10px;
+  width: 90%;
+  padding: 1%;
+}
+.create .input{
+  width: 90%;
+}
+.create button{
+  padding:0px;
+  border-radius: 5px;
+}
