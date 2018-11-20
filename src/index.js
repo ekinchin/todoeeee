@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import TodoApp from './TodoApp';
 
-ReactDOM.render(<App name="Task manager" />, document.getElementById('root'));
+ReactDOM.render(<TodoApp name="Task manager" />, document.getElementById('root'));
