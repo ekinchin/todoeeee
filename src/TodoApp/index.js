@@ -75,11 +75,9 @@ class App extends Component {
     const {input, todos} = this.state;
     return (
       <div className="App container">
-        <div className="col justify-content-md-center align-items-center ">
           <TodoInput value={input} onAppend={this.handlerAppendTodo} onChange={this.handleInputChange} />
           <TodoList todos={todos.filter(todo => todo.isDone===false)} onDone={this.handlerDoneTodo} onRemove={this.handlerRemoveTodo}/>
           <TodoList todos={todos.filter(todo => todo.isDone===true)} onDone={this.handlerDoneTodo} onRemove={this.handlerRemoveTodo}/>
-        </div>
       </div>
     );
   };
