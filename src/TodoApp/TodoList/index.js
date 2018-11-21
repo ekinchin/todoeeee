@@ -4,7 +4,7 @@ import './style.css';
 
 const TodoList = ({todos, onDone, onRemove}) => {
   return (
-    <div>
+    <div className="container"> 
       {
         todos.map(
           (todo)=>(
