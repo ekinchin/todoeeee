@@ -1,18 +1,23 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
-const TodoList = ({todos, onDone, onRemove}) => {
-  return (
-    <div className="container"> 
-      {
+const TodoList = ({ todos, onDone, onRemove }) => (
+  <div className="container">
+    {
         todos.map(
-          (todo)=>(
+          todo => (
             <TodoItem todo={todo} onDone={onDone} onRemove={onRemove} key={todo.id} />
-          )
+          ),
         )
       }
-    </div>
-  )
-}
+  </div>
+);
 
 export default TodoList;
+
+TodoList.propTypes = {
+  todos: propTypes.arrayOf(propTypes.string).isRequired,
+  onDone: propTypes.func.isRequired,
+  onRemove: propTypes.func.isRequired,
+};
