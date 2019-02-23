@@ -16,5 +16,5 @@ ReactDOM.render(
   <Provider store={store}>
     <TodoEdit name="Task manager" />
   </Provider>,
-  document.getElementById('TodoEdit'),
+  document.getElementById('root'),
 );
