@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 
 const TodoItem = ({ todo, onDone, onRemove }) => (
   <div className="row justify-content-center align-items-center m-3 text-left">
-    <div className={todo.isDone ? 'col-3 bg-light text-muted' : 'col-3 bg-light'}>{todo.date}</div>
+    <div className={todo.isDone ? 'col-3 bg-light' : 'col-3 bg-light'}>{todo.date}</div>
     <div className={todo.isDone ? 'card col-6 bg-light' : 'card col-6 bg-light'}>
       <div className={todo.isDone ? 'card-text font-weight-light bg-light text-muted' : 'card-text font-weight-normal bg-light text-body'}>{todo.text}</div>
     </div>
