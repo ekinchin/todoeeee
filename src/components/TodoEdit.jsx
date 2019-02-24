@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fileDownload from 'js-file-download';
 import TodoList from './TodoList';
 import TodoInput from './TodoInput';
 
@@ -33,6 +34,7 @@ class TodoEdit extends Component {
       input: event.target.value,
     });
   }
+
 
   handlerAppendTodo = () => {
     const { input } = this.state;
@@ -70,10 +72,16 @@ class TodoEdit extends Component {
     }));
   };
 
+  handlerFileDownload = () => {
+    const { todos } = this.state;
+    fileDownload(JSON.stringify(todos), 'filename.json');
+  }
+
   render() {
     const { input, todos } = this.state;
     return (
       <div>
+        <button type="button" className="btn btn-sm btn-success" onClick={this.handlerFileDownload.bind(this)}>скачать</button>
         <TodoInput
           value={input}
           onAppend={this.handlerAppendTodo}
