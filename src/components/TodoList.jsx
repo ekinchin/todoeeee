@@ -1,9 +1,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { Container } from 'react-bootstrap';
 import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, onDone, onRemove }) => (
-  <div className="container">
+  <Container>
     {
       todos.map(
         todo => (
@@ -11,7 +12,7 @@ const TodoList = ({ todos, onDone, onRemove }) => (
         ),
       )
     }
-  </div>
+  </Container>
 );
 
 export default TodoList;

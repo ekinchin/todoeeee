@@ -1,7 +1,12 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { Component } from 'react';
 import fileDownload from 'js-file-download';
+import { Container } from 'react-bootstrap';
 import TodoList from './TodoList';
 import TodoInput from './TodoInput';
+import HeaderMenu from './HeaderMenu';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class TodoEdit extends Component {
   state = {
@@ -97,23 +102,23 @@ class TodoEdit extends Component {
     }));
   }
 
+  handleFiles = () => {
+    const myUploadedFile = document.getElementById('input').files[0];
+    // eslint-disable-next-line no-console
+    console.log(myUploadedFile);
+  }
+
   render() {
     const { input, todos, isReverse } = this.state;
     const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
     return (
-      <div>
-        <div className="container">
-          <div className="row justify-content-between align-items-center">
-            <div className="col-auto">
-              <button type="button" className="btn btn-sm btn-success" onClick={this.handlerFileDownload.bind(this)}>скачать</button>
-            </div>
-            <div className="col-auto">
-              <button type="button" className="btn btn-primary btn-sm" onClick={this.handlerReverseSelect.bind(this)}>
-                {isReverse ? 'От новых к старым' : 'От старых к новым'}
-              </button>
-            </div>
-          </div>
-        </div>
+      <Container>
+        <HeaderMenu
+          onDownload={this.handlerFileDownload}
+          onUpload={this.handleFiles}
+          onReverse={this.handlerReverseSelect}
+          isReverse={isReverse}
+        />
         <TodoInput
           value={input}
           onAppend={this.handlerAppendTodo}
@@ -129,7 +134,7 @@ class TodoEdit extends Component {
           onDone={this.handlerDoneTodo}
           onRemove={this.handlerRemoveTodo}
         />
-      </div>
+      </Container>
     );
   }
 }
