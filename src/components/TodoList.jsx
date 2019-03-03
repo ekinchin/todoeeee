@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, onDone, onRemove }) => (
-  <Container>
+  <Container fluid="true">
     {
       todos.map(
         todo => (

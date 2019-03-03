@@ -112,7 +112,7 @@ class TodoEdit extends Component {
     const { input, todos, isReverse } = this.state;
     const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
     return (
-      <Container>
+      <Container fluid="falses">
         <HeaderMenu
           onDownload={this.handlerFileDownload}
           onUpload={this.handleFiles}
