@@ -12,7 +12,7 @@ const TodoInput = ({ value, onAppend, onChange }) => (
           <FormControl type="text" className="form-control" value={value} onChange={onChange} placeholder="Write your todo here" />
           <InputGroup.Append>
             <Button variant="primary" size="sm" onClick={onAppend}>
-              Append
+              Добавить
             </Button>
           </InputGroup.Append>
         </InputGroup>

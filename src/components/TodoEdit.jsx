@@ -59,8 +59,12 @@ class TodoEdit extends Component {
 
 
   handlerAppendTodo = () => {
-    const { input } = this.state;
+    const {
+      input, todos, todosOnPage, isReverse,
+    } = this.state;
     if (input === '') return;
+    const pages = Math.ceil((todos.length + 1) / todosOnPage);
+
     this.setState(prevState => ({
       input: '',
       todos: [
@@ -72,7 +76,7 @@ class TodoEdit extends Component {
           isDone: false,
         },
       ],
-      pageNumber: 1,
+      pageNumber: isReverse ? 1 : pages,
     }));
   };
 
@@ -120,17 +124,18 @@ class TodoEdit extends Component {
     });
   }
 
+  onChangeTodosOnPage = (todos) => {
+    this.setState({
+      todosOnPage: todos,
+    });
+  }
+
   render() {
     const {
       input, todos, isReverse, pageNumber, todosOnPage,
     } = this.state;
     const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
     const todosView = todosDir.slice((pageNumber - 1) * todosOnPage, pageNumber * todosOnPage);
-    console.log('todosOnPage', todosOnPage);
-    console.log('pageNumber', pageNumber);
-    console.log('(pageNumber - 1) * todosOnPage', (pageNumber - 1) * todosOnPage);
-    console.log(todosView);
-    console.log('todosDir.length', todosDir.length);
     const pageCount = todos.length === 0 ? 1 : Math.ceil(todos.length / todosOnPage);
     return (
       <Container fluid="falses">
@@ -159,6 +164,8 @@ class TodoEdit extends Component {
           currentPage={pageNumber}
           pageCount={pageCount}
           onChangePage={this.onChangePage}
+          todosOnPage={todosOnPage}
+          onChangeTodosOnPage={this.onChangeTodosOnPage}
         />
       </Container>
     );
