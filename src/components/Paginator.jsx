@@ -16,7 +16,7 @@ const Paginator = ({ currentPage, pageCount, onChangePage }) => {
           {
           items.map(
             item => (
-              <Pagination.Item key={item} onClick={onChangePage.bind(this, item)}>
+              <Pagination.Item className={item === currentPage ? 'active' : null} key={item} onClick={onChangePage.bind(this, item)}>
                 {item}
               </Pagination.Item>
             ),

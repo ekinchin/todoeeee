@@ -72,6 +72,7 @@ class TodoEdit extends Component {
           isDone: false,
         },
       ],
+      pageNumber: 1,
     }));
   };
 
@@ -91,6 +92,7 @@ class TodoEdit extends Component {
       todos: prevState.todos.filter(
         todo => todo.id !== id,
       ),
+      pageNumber: 1,
     }));
   };
 
