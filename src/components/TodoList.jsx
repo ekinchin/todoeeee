@@ -18,7 +18,7 @@ const TodoList = ({ todos, onDone, onRemove }) => (
 export default TodoList;
 
 TodoList.propTypes = {
-  todos: propTypes.arrayOf(propTypes.string).isRequired,
+  todos: propTypes.arrayOf(propTypes.object).isRequired,
   onDone: propTypes.func.isRequired,
   onRemove: propTypes.func.isRequired,
 };

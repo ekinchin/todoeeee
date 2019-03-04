@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/jsx-no-bind */
 import React, { Component } from 'react';
 import fileDownload from 'js-file-download';
@@ -5,6 +6,7 @@ import { Container } from 'react-bootstrap';
 import TodoList from './TodoList';
 import TodoInput from './TodoInput';
 import HeaderMenu from './HeaderMenu';
+import Paginator from './Paginator';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,6 +16,8 @@ class TodoEdit extends Component {
     input: '',
     todos: [],
     isReverse: false,
+    pageNumber: 1,
+    todosOnPage: 10,
   };
 
   componentDidMount() {
@@ -108,9 +112,24 @@ class TodoEdit extends Component {
     console.log(myUploadedFile);
   }
 
+  onChangePage = (page) => {
+    this.setState({
+      pageNumber: page,
+    });
+  }
+
   render() {
-    const { input, todos, isReverse } = this.state;
+    const {
+      input, todos, isReverse, pageNumber, todosOnPage,
+    } = this.state;
     const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
+    const todosView = todosDir.slice((pageNumber - 1) * todosOnPage, pageNumber * todosOnPage);
+    console.log('todosOnPage', todosOnPage);
+    console.log('pageNumber', pageNumber);
+    console.log('(pageNumber - 1) * todosOnPage', (pageNumber - 1) * todosOnPage);
+    console.log(todosView);
+    console.log('todosDir.length', todosDir.length);
+    const pageCount = todos.length === 0 ? 1 : Math.ceil(todos.length / todosOnPage);
     return (
       <Container fluid="falses">
         <HeaderMenu
@@ -125,14 +144,19 @@ class TodoEdit extends Component {
           onChange={this.handleInputChange}
         />
         <TodoList
-          todos={todosDir.filter(todo => todo.isDone === false)}
+          todos={todosView.filter(todo => todo.isDone === false)}
           onDone={this.handlerDoneTodo}
           onRemove={this.handlerRemoveTodo}
         />
         <TodoList
-          todos={todosDir.filter(todo => todo.isDone === true)}
+          todos={todosView.filter(todo => todo.isDone === true)}
           onDone={this.handlerDoneTodo}
           onRemove={this.handlerRemoveTodo}
+        />
+        <Paginator
+          currentPage={pageNumber}
+          pageCount={pageCount}
+          onChangePage={this.onChangePage}
         />
       </Container>
     );
