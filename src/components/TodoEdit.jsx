@@ -124,9 +124,14 @@ class TodoEdit extends Component {
     });
   }
 
-  onChangeTodosOnPage = (todos) => {
+  onChangeTodosOnPage = (count) => {
+    const {
+      todos, isReverse,
+    } = this.state;
+    const pages = Math.ceil((todos.length + 1) / count);
     this.setState({
-      todosOnPage: todos,
+      todosOnPage: count,
+      pageNumber: isReverse ? 1 : pages,
     });
   }
 
