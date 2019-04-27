@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class TodoEdit extends Component {
   state = {
-    // id: '',
     input: '',
     todos: [],
     isReverse: false,
@@ -51,7 +50,7 @@ class TodoEdit extends Component {
   }
 
   handleInputChange = (event) => {
-    if (event.target.value === '') return;
+    // if (event.target.value === '') return;
     this.setState({
       input: event.target.value,
     });
