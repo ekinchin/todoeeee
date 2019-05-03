@@ -12,9 +12,9 @@ const HeaderMenu = ({
   <Container fluid="true">
     <Row className="justify-content-between align-items-center" noGutters="true">
       <ButtonGroup>
-        <Button size="sm" type="file" as="input" onChange={onUpload.bind(this)} />
-        <Button size="sm" variant="success" onClick={onDownload.bind(this)}>скачать</Button>
-        <Button size="sm" variant="primary" onClick={onReverse.bind(this)}>
+        <Button size="sm" type="file" as="input" onChange={onUpload} />
+        <Button size="sm" variant="success" onClick={onDownload}>скачать</Button>
+        <Button size="sm" variant="primary" onClick={onReverse}>
           {isReverse ? 'От новых к старым' : 'От старых к новым'}
         </Button>
       </ButtonGroup>

@@ -24,7 +24,7 @@ const Paginator = ({
                   {
                     items.map(
                       item => (
-                        <Pagination.Item className={item === currentPage ? 'active' : null} key={item} onClick={onChangePage.bind(this, item)}>
+                        <Pagination.Item className={item === currentPage ? 'active' : null} key={item} onClick={onChangePage(item)}>
                           {item}
                         </Pagination.Item>
                       ),
@@ -39,9 +39,9 @@ const Paginator = ({
           <span className="mr-1">Записей на странице:</span>
           <ButtonGroup size="sm" vertical>
             <DropdownButton size="sm" as={ButtonGroup} title={todosOnPage}>
-              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage.bind(this, 10)}>10</Dropdown.Item>
-              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage.bind(this, 20)}>20</Dropdown.Item>
-              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage.bind(this, 30)}>30</Dropdown.Item>
+              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage(10)}>10</Dropdown.Item>
+              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage(20)}>20</Dropdown.Item>
+              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage(30)}>30</Dropdown.Item>
             </DropdownButton>
           </ButtonGroup>
         </Col>

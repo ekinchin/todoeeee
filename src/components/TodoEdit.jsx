@@ -117,13 +117,13 @@ class TodoEdit extends Component {
     console.log(myUploadedFile);
   }
 
-  onChangePage = (page) => {
+  onChangePage = page => () => {
     this.setState({
       pageNumber: page,
     });
   }
 
-  onChangeTodosOnPage = (count) => {
+  onChangeTodosOnPage = count => () => {
     const {
       todos, isReverse,
     } = this.state;
