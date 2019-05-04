@@ -26,7 +26,6 @@ class TodoEdit extends Component {
   componentDidMount() {
     let saved = [];
     let isReverse = false;
-
     if (typeof localStorage.todos === 'undefined') {
       saved = '[]';
     } else {
@@ -45,6 +44,7 @@ class TodoEdit extends Component {
         isReverse: JSON.parse(isReverse),
       },
     );
+    this.input.current.focus();
   }
 
   componentDidUpdate() {
