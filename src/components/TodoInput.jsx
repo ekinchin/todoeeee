@@ -4,12 +4,12 @@ import {
   Row, Col, Button, InputGroup, FormControl, Container,
 } from 'react-bootstrap';
 
-const TodoInput = ({ value, onAppend, onChange }) => (
+const TodoInput = ({ input, onAppend }) => (
   <Container fluid="true">
     <Row noGutters="true" className="my-3">
       <Col>
         <InputGroup size="sm">
-          <FormControl type="text" className="form-control" value={value} onChange={onChange} placeholder="Write your todo here" />
+          <FormControl type="text" className="form-control" ref={input} placeholder="ТуДу ждет" />
           <InputGroup.Append>
             <Button variant="primary" size="sm" onClick={onAppend}>
               Добавить
@@ -24,7 +24,6 @@ const TodoInput = ({ value, onAppend, onChange }) => (
 export default TodoInput;
 
 TodoInput.propTypes = {
-  value: propTypes.string.isRequired,
+  input: propTypes.string.isRequired,
   onAppend: propTypes.func.isRequired,
-  onChange: propTypes.func.isRequired,
 };

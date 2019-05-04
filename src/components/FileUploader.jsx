@@ -23,10 +23,6 @@ class FileUpload extends React.Component {
     return (
       // eslint-disable-next-line react/jsx-no-comment-textnodes
       <form onSubmit={this.handleSubmit}>
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control
         <label>
           Upload file:
           <input type="file" ref={this.fileInput} />

@@ -4,8 +4,6 @@ import propTypes from 'prop-types';
 import {
   Row, Button, Container, ButtonGroup,
 } from 'react-bootstrap';
-import FileUploader from './FileUploader';
-
 
 const HeaderMenu = ({
   onDownload, onUpload, onReverse, isReverse,
@@ -13,7 +11,6 @@ const HeaderMenu = ({
   <Container fluid="true">
     <Row className="justify-content-between align-items-center" noGutters="true">
       <ButtonGroup>
-        <FileUploader />
         <Button size="sm" type="file" as="input" onChange={onUpload} />
         <Button size="sm" variant="success" onClick={onDownload}>скачать</Button>
         <Button size="sm" variant="primary" onClick={onReverse}>

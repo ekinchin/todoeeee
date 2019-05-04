@@ -11,13 +11,17 @@ import Paginator from './Paginator';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class TodoEdit extends Component {
+  constructor(props) {
+    super(props);
+    this.input = React.createRef();
+  }
+
   state = {
-    input: '',
     todos: [],
     isReverse: false,
     pageNumber: 1,
     todosOnPage: 10,
-  };
+  }
 
   componentDidMount() {
     let saved = [];
@@ -49,29 +53,22 @@ class TodoEdit extends Component {
     localStorage.setItem('isReverse', JSON.stringify(isReverse));
   }
 
-  handleInputChange = (event) => {
-    // if (event.target.value === '') return;
-    this.setState({
-      input: event.target.value,
-    });
-  }
-
-
   handlerAppendTodo = () => {
     const {
-      input, todos, todosOnPage, isReverse,
+      todos, todosOnPage, isReverse,
     } = this.state;
+    const input = this.input.current.value;
     if (input === '') return;
+    this.input.current.value = '';
     const pages = Math.ceil((todos.length + 1) / todosOnPage);
 
     this.setState(prevState => ({
-      input: '',
       todos: [
         ...prevState.todos,
         {
           id: new Date().getTime(),
           date: new Date().toLocaleString(),
-          text: prevState.input,
+          text: input,
           isDone: false,
         },
       ],
@@ -136,7 +133,7 @@ class TodoEdit extends Component {
 
   render() {
     const {
-      input, todos, isReverse, pageNumber, todosOnPage,
+      todos, isReverse, pageNumber, todosOnPage,
     } = this.state;
     const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
     const todosView = todosDir.slice((pageNumber - 1) * todosOnPage, pageNumber * todosOnPage);
@@ -150,9 +147,8 @@ class TodoEdit extends Component {
           isReverse={isReverse}
         />
         <TodoInput
-          value={input}
+          input={this.input}
           onAppend={this.handlerAppendTodo}
-          onChange={this.handleInputChange}
         />
         <TodoList
           todos={todosView.filter(todo => todo.isDone === false)}
