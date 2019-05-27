@@ -24,6 +24,6 @@ const TodoInput = ({ input, onAppend }) => (
 export default TodoInput;
 
 TodoInput.propTypes = {
-  input: propTypes.string.isRequired,
+  input: propTypes.objectOf(propTypes.object).isRequired,
   onAppend: propTypes.func.isRequired,
 };
