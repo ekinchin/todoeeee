@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable react/jsx-no-bind */
 import React, { Component } from 'react';
 import fileDownload from 'js-file-download';
 import { Container } from 'react-bootstrap';
@@ -7,7 +5,6 @@ import TodoList from './TodoList';
 import TodoInput from './TodoInput';
 import HeaderMenu from './HeaderMenu';
 import Paginator from './Paginator';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class TodoEdit extends Component {
@@ -108,10 +105,15 @@ class TodoEdit extends Component {
     }));
   }
 
-  handleFiles = () => {
-    const myUploadedFile = document.getElementById('input').files[0];
-    // eslint-disable-next-line no-console
-    console.log(myUploadedFile);
+  handleFiles = (e) => {
+    const blob = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsText(blob, 'UTF-8');
+    reader.onload = (evt) => {
+      this.setState({
+        todos: JSON.parse(evt.target.result),
+      });
+    };
   }
 
   onChangePage = page => () => {
