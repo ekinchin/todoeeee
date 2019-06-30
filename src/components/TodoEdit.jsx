@@ -107,13 +107,19 @@ class TodoEdit extends Component {
 
   handleFiles = (e) => {
     const blob = e.target.files[0];
-    const reader = new FileReader();
-    reader.readAsText(blob, 'UTF-8');
-    reader.onload = (evt) => {
-      this.setState({
-        todos: JSON.parse(evt.target.result),
-      });
-    };
+    if (blob !== undefined) {
+      const reader = new FileReader();
+      reader.readAsText(blob, 'UTF-8');
+      reader.onload = (evt) => {
+        try {
+          const result = JSON.parse(evt.target.result);
+          this.setState({
+            todos: result,
+          });
+        // eslint-disable-next-line no-alert
+        } catch { alert('Ошибка парсинга'); }
+      };
+    }
   }
 
   onChangePage = page => () => {
