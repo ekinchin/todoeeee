@@ -105,9 +105,10 @@ class TodoEdit extends Component {
     }));
   }
 
-  handleFiles = (e) => {
+  handleFileUpload = (e) => {
+    const fileType = 'application/json';
     const blob = e.target.files[0];
-    if (blob !== undefined) {
+    if (blob !== undefined && e.target.files[0].type === fileType) {
       const reader = new FileReader();
       reader.readAsText(blob, 'UTF-8');
       reader.onload = (evt) => {
@@ -150,7 +151,7 @@ class TodoEdit extends Component {
       <Container fluid="falses">
         <HeaderMenu
           onDownload={this.handlerFileDownload}
-          onUpload={this.handleFiles}
+          onUpload={this.handleFileUpload}
           onReverse={this.handlerReverseSelect}
           isReverse={isReverse}
         />
