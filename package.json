@@ -22,6 +22,11 @@
     "eslint-config-react-app": "^3.0.8",
     "eslint-loader": "2.1.1",
     "eslint-plugin-flowtype": "2.50.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
     "file-loader": "2.0.0",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "7.0.0",
@@ -122,10 +127,6 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.17.0"
+
   }
 }
