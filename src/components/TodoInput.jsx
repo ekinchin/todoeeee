@@ -6,8 +6,8 @@ import {
 
 const TodoInput = ({ input, onAppend }) => (
   <Container fluid="true">
-    <Row noGutters="true" className="my-3">
-      <Col>
+    <Row noGutters="true" className="justify-content-center align-items-center text-left my-3">
+      <Col className="col-8">
         <InputGroup size="sm">
           <FormControl type="text" className="form-control" ref={input} placeholder="ТуДу ждет" />
           <InputGroup.Append>
