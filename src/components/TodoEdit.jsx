@@ -57,6 +57,7 @@ class TodoEdit extends Component {
     const input = this.input.current.value;
     if (input === '') return;
     this.input.current.value = '';
+    this.input.current.focus();
     const pages = Math.ceil((todos.length + 1) / todosOnPage);
 
     this.setState(prevState => ({
@@ -149,12 +150,6 @@ class TodoEdit extends Component {
     const pageCount = todos.length === 0 ? 1 : Math.ceil(todos.length / todosOnPage);
     return (
       <Container fluid="falses">
-        <HeaderMenu
-          onDownload={this.handlerFileDownload}
-          onUpload={this.handleFileUpload}
-          onReverse={this.handlerReverseSelect}
-          isReverse={isReverse}
-        />
         <TodoInput
           input={this.input}
           onAppend={this.handlerAppendTodo}
@@ -175,6 +170,12 @@ class TodoEdit extends Component {
           onChangePage={this.onChangePage}
           todosOnPage={todosOnPage}
           onChangeTodosOnPage={this.onChangeTodosOnPage}
+        />
+        <HeaderMenu
+          onDownload={this.handlerFileDownload}
+          onUpload={this.handleFileUpload}
+          onReverse={this.handlerReverseSelect}
+          isReverse={isReverse}
         />
       </Container>
     );

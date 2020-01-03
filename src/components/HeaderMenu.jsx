@@ -9,7 +9,7 @@ const HeaderMenu = ({
   onDownload, onUpload, onReverse, isReverse,
 }) => (
   <Container fluid="true">
-    <Row className="justify-content-between align-items-center" noGutters="true">
+    <Row className="justify-content-center align-items-center my-3" noGutters="true">
       <ButtonGroup>
         <Button size="sm" type="file" as="input" onChange={onUpload} />
         <Button size="sm" variant="success" onClick={onDownload}>скачать</Button>
