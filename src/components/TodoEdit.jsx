@@ -173,11 +173,11 @@ class TodoEdit extends Component {
           todosOnPage={todosOnPage}
           onChangeTodosOnPage={this.onChangeTodosOnPage}
           isReverse={isReverse}
+          onReverse={this.handlerReverseSelect}
         />
         <HeaderMenu
           onDownload={this.handlerFileDownload}
           onUpload={this.handleFileUpload}
-          onReverse={this.handlerReverseSelect}
         />
       </Container>
     );
