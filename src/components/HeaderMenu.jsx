@@ -11,7 +11,7 @@ const HeaderMenu = ({
   <Container fluid="true">
     <Row className="justify-content-center align-items-center my-3" noGutters="true">
       <ButtonGroup>
-        <Button size="sm" type="file" as="input" onChange={onUpload} />
+        <input type="file" onChange={onUpload} />
         <Button size="sm" variant="success" onClick={onDownload}>скачать</Button>
         <Button size="sm" variant="primary" onClick={onReverse}>
           {isReverse ? 'От новых к старым' : 'От старых к новым'}

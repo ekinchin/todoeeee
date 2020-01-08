@@ -107,6 +107,7 @@ class TodoEdit extends Component {
   }
 
   handleFileUpload = (e) => {
+    console.log('onUpload');
     const fileType = 'application/json';
     const blob = e.target.files[0];
     if (blob !== undefined && e.target.files[0].type === fileType) {
