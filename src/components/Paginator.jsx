@@ -2,12 +2,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import {
-  Pagination, Container, Row, Col, ButtonGroup, DropdownButton, Dropdown,
+  Pagination, Container, Row, Col, Button, ButtonGroup, DropdownButton, Dropdown,
 } from 'react-bootstrap';
 
 // eslint-disable-next-line no-unused-vars
 const Paginator = ({
-  currentPage, pageCount, onChangePage, todosOnPage, onChangeTodosOnPage,
+  currentPage, pageCount, onChangePage, todosOnPage, onChangeTodosOnPage, onReverse, isReverse,
 }) => {
   let items = [];
   if (pageCount <= 5) {
@@ -62,6 +62,9 @@ const Paginator = ({
               <Dropdown.Item size="sm" onClick={onChangeTodosOnPage(30)}>30</Dropdown.Item>
             </DropdownButton>
           </ButtonGroup>
+          <Button className="mx-3" size="sm" variant="primary" onClick={onReverse}>
+            {isReverse ? 'От новых к старым' : 'От старых к новым'}
+          </Button>
         </Col>
       </Row>
     </Container>
@@ -77,4 +80,6 @@ Paginator.propTypes = {
   onChangePage: propTypes.func.isRequired,
   todosOnPage: propTypes.number.isRequired,
   onChangeTodosOnPage: propTypes.func.isRequired,
+  onReverse: propTypes.func.isRequired,
+  isReverse: propTypes.bool.isRequired,
 };

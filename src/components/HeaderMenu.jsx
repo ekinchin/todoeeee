@@ -6,16 +6,13 @@ import {
 } from 'react-bootstrap';
 
 const HeaderMenu = ({
-  onDownload, onUpload, onReverse, isReverse,
+  onDownload, onUpload,
 }) => (
   <Container fluid="true">
     <Row className="justify-content-center align-items-center my-3" noGutters="true">
       <ButtonGroup>
         <input type="file" onChange={onUpload} />
         <Button size="sm" variant="success" onClick={onDownload}>скачать</Button>
-        <Button size="sm" variant="primary" onClick={onReverse}>
-          {isReverse ? 'От новых к старым' : 'От старых к новым'}
-        </Button>
       </ButtonGroup>
     </Row>
   </Container>
@@ -26,6 +23,4 @@ export default HeaderMenu;
 HeaderMenu.propTypes = {
   onDownload: propTypes.func.isRequired,
   onUpload: propTypes.func.isRequired,
-  onReverse: propTypes.func.isRequired,
-  isReverse: propTypes.bool.isRequired,
 };

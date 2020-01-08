@@ -107,7 +107,6 @@ class TodoEdit extends Component {
   }
 
   handleFileUpload = (e) => {
-    console.log('onUpload');
     const fileType = 'application/json';
     const blob = e.target.files[0];
     if (blob !== undefined && e.target.files[0].type === fileType) {
@@ -119,6 +118,8 @@ class TodoEdit extends Component {
           this.setState({
             todos: result,
           });
+          // eslint-disable-next-line no-alert
+          alert('Загрузка выполнена.');
         // eslint-disable-next-line no-alert
         } catch { alert('Ошибка парсинга'); }
       };
@@ -171,12 +172,12 @@ class TodoEdit extends Component {
           onChangePage={this.onChangePage}
           todosOnPage={todosOnPage}
           onChangeTodosOnPage={this.onChangeTodosOnPage}
+          isReverse={isReverse}
         />
         <HeaderMenu
           onDownload={this.handlerFileDownload}
           onUpload={this.handleFileUpload}
           onReverse={this.handlerReverseSelect}
-          isReverse={isReverse}
         />
       </Container>
     );
