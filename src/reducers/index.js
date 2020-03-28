@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-// import books from './books';
+import items from './item';
+import paginator from './paginator';
 
-export default combineReducers({
-});
+export default combineReducers({ items, paginator });
