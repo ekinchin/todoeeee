@@ -5,7 +5,8 @@ import TodoList from './TodoList';
 import TodoInput from './TodoInput';
 import HeaderMenu from './HeaderMenu';
 import Paginator from './Paginator';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class TodoEdit extends Component {
   constructor(props) {
