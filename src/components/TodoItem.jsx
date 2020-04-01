@@ -16,7 +16,7 @@ const TodoItem = ({ todo, onRemove }) => (
       </Card>
     </Col>
     <Col className="col-auto mx-1">
-      <Button variant="secondary" size="sm" onClick={onRemove(todo.id)}>Delete</Button>
+      <Button variant="secondary" size="sm" onClick={() => onRemove(todo.id)}>Delete</Button>
     </Col>
   </Row>
 );
@@ -24,7 +24,6 @@ const TodoItem = ({ todo, onRemove }) => (
 export default TodoItem;
 
 TodoItem.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  todo: propTypes.object.isRequired,
+  todo: propTypes.objectOf(propTypes.object).isRequired,
   onRemove: propTypes.func.isRequired,
 };

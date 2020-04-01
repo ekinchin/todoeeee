@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable consistent-return */
 import {
-  APPEND_ITEM, REMOVE_ITEM, SET_NUMBER_PAGE, SET_ITEMS_ON_PAGE,
+  APPEND_ITEM, REMOVE_ITEM, SET_NUMBER_PAGE, SET_ITEMS_ON_PAGE, DONE_ITEM,
 } from '../actions';
 
 const initialState = {
@@ -40,7 +40,24 @@ const items = (state = initialState, action) => {
       };
     }
     case REMOVE_ITEM: {
-      return state; }
+      const { id } = action.payload;
+      return {
+        todos: state.todos.filter(
+          todo => todo.id !== id,
+        ),
+      };
+    }
+    case DONE_ITEM: {
+      const { id } = action.payload;
+      return {
+        todos: state.todos.map(
+          todo => (todo.id === id ? {
+            ...todo,
+            isDone: !todo.isDone,
+          } : todo),
+        ),
+      };
+    }
     case SET_NUMBER_PAGE: {
       return state; }
     case SET_ITEMS_ON_PAGE: {

@@ -1,32 +1,23 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
-import TodoList from './TodoList';
+import TodoList from '../containers/TodoList';
 import TodoInput from '../containers/TodoInput';
 import HeaderMenu from './HeaderMenu';
 import Paginator from './Paginator';
 
 const TodoEdit = ({
-  todos, isReverse, pageNumber, todosOnPage, handlerDoneTodo, handlerRemoveTodo,
+  todos, isReverse, pageNumber, todosOnPage,
   onChangePage, onChangeTodosOnPage, handlerReverseSelect, handlerFileDownload, handleFileUpload,
 }) => {
-  const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
-  const todosView = todosDir.slice((pageNumber - 1) * todosOnPage, pageNumber * todosOnPage);
+  // const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
+  // const todosView = todosDir.slice((pageNumber - 1) * todosOnPage, pageNumber * todosOnPage);
   const pageCount = todos.length === 0 ? 1 : Math.ceil(todos.length / todosOnPage);
 
   return (
     <Container fluid="falses">
       <TodoInput />
-      <TodoList
-        todos={todosView.filter(todo => todo.isDone === false)}
-        onDone={handlerDoneTodo}
-        onRemove={handlerRemoveTodo}
-      />
-      <TodoList
-        todos={todosView.filter(todo => todo.isDone === true)}
-        onDone={handlerDoneTodo}
-        onRemove={handlerRemoveTodo}
-      />
+      <TodoList />
       <Paginator
         currentPage={pageNumber}
         pageCount={pageCount}
@@ -230,8 +221,6 @@ TodoEdit.propTypes = {
   isReverse: propTypes.bool.isRequired,
   pageNumber: propTypes.number.isRequired,
   todosOnPage: propTypes.number.isRequired,
-  handlerDoneTodo: propTypes.func.isRequired,
-  handlerRemoveTodo: propTypes.func.isRequired,
   onChangePage: propTypes.func.isRequired,
   onChangeTodosOnPage: propTypes.func.isRequired,
   handlerReverseSelect: propTypes.func.isRequired,
