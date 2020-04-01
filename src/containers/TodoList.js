@@ -4,6 +4,7 @@ import { removeItem, doneItem } from '../actions';
 
 const mapStateToProps = state => ({
   todos: state.items.todos,
+  isReverse: state.items.isReverse,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -5,7 +5,6 @@ import {
 } from 'react-bootstrap';
 
 const TodoItem = ({ todo, onRemove }) => (
-
   <Row className="justify-content-center align-items-center text-left my-3" noGutters="true">
     <Col className="col-auto mx-1">{todo.date}</Col>
     <Col className="col-6">
@@ -24,6 +23,7 @@ const TodoItem = ({ todo, onRemove }) => (
 export default TodoItem;
 
 TodoItem.propTypes = {
-  todo: propTypes.objectOf(propTypes.object).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  todo: propTypes.object.isRequired,
   onRemove: propTypes.func.isRequired,
 };

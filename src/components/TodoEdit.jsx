@@ -4,36 +4,23 @@ import { Container } from 'react-bootstrap';
 import TodoList from '../containers/TodoList';
 import TodoInput from '../containers/TodoInput';
 import HeaderMenu from './HeaderMenu';
-import Paginator from './Paginator';
-
+import Paginator from '../containers/Paginator';
+// const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
+// const todosView = todosDir.slice((pageNumber - 1) * todosOnPage, pageNumber * todosOnPage);
+// const pageCount = todos.length === 0 ? 1 : Math.ceil(todos.length / todosOnPage);
 const TodoEdit = ({
-  todos, isReverse, pageNumber, todosOnPage,
-  onChangePage, onChangeTodosOnPage, handlerReverseSelect, handlerFileDownload, handleFileUpload,
-}) => {
-  // const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
-  // const todosView = todosDir.slice((pageNumber - 1) * todosOnPage, pageNumber * todosOnPage);
-  const pageCount = todos.length === 0 ? 1 : Math.ceil(todos.length / todosOnPage);
-
-  return (
-    <Container fluid="falses">
-      <TodoInput />
-      <TodoList />
-      <Paginator
-        currentPage={pageNumber}
-        pageCount={pageCount}
-        onChangePage={onChangePage}
-        todosOnPage={todosOnPage}
-        onChangeTodosOnPage={onChangeTodosOnPage}
-        isReverse={isReverse}
-        onReverse={handlerReverseSelect}
-      />
-      <HeaderMenu
-        onDownload={handlerFileDownload}
-        onUpload={handleFileUpload}
-      />
-    </Container>
-  );
-};
+  handlerFileDownload, handleFileUpload,
+}) => (
+  <Container fluid="falses">
+    <TodoInput />
+    <TodoList />
+    <Paginator />
+    <HeaderMenu
+      onDownload={handlerFileDownload}
+      onUpload={handleFileUpload}
+    />
+  </Container>
+);
 
 // class TodoEdit extends Component {
 //   constructor(props) {
@@ -216,14 +203,6 @@ const TodoEdit = ({
 export default TodoEdit;
 
 TodoEdit.propTypes = {
-
-  todos: propTypes.arrayOf(propTypes.object).isRequired,
-  isReverse: propTypes.bool.isRequired,
-  pageNumber: propTypes.number.isRequired,
-  todosOnPage: propTypes.number.isRequired,
-  onChangePage: propTypes.func.isRequired,
-  onChangeTodosOnPage: propTypes.func.isRequired,
-  handlerReverseSelect: propTypes.func.isRequired,
   handlerFileDownload: propTypes.func.isRequired,
   handleFileUpload: propTypes.func.isRequired,
 };

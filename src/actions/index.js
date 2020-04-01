@@ -24,12 +24,12 @@ export const doneItem = id => ({
   payload: { id },
 });
 
-export const setItemsOnPage = items => ({
+export const setItemsOnPage = todosOnPage => ({
   type: SET_ITEMS_ON_PAGE,
-  payload: { items },
+  payload: { todosOnPage },
 });
 
-export const setNumberPage = page => ({
+export const setPage = pageNumer => ({
   type: SET_NUMBER_PAGE,
-  payload: { page },
+  payload: { pageNumer },
 });
