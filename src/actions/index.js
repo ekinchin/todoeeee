@@ -9,9 +9,9 @@ export const toggleSortDirection = () => ({
   type: TOGGLE_SORT_DIRECTION,
 });
 
-export const appendItem = content => ({
+export const appendItem = input => ({
   type: APPEND_ITEM,
-  payload: content,
+  payload: { input },
 });
 
 export const removeItem = id => ({
