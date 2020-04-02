@@ -29,7 +29,7 @@ export const setItemsOnPage = todosOnPage => ({
   payload: { todosOnPage },
 });
 
-export const setPage = pageNumer => ({
+export const setPage = currentPage => ({
   type: SET_NUMBER_PAGE,
-  payload: { pageNumer },
+  payload: { currentPage },
 });

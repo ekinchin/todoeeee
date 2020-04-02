@@ -4,10 +4,9 @@ import {
 
 const initialState = {
   todos: [],
-  pageNumber: 0,
+  currentPage: 1,
   todosOnPage: 30,
   isReverse: false,
-  currentPage: 0,
 };
 
 const items = (state = initialState, action) => {
@@ -36,9 +35,8 @@ const items = (state = initialState, action) => {
           },
         ],
         isReverse: state.isReverse,
-        pageNumber: isReverse ? 1 : pages,
+        currentPage: isReverse ? 1 : pages,
         todosOnPage: state.todosOnPage,
-        currentPage: state.currentPage,
       };
     }
     // удалить запись
@@ -53,9 +51,8 @@ const items = (state = initialState, action) => {
           todo => todo.id !== id,
         ),
         isReverse: state.isReverse,
-        pageNumber: isReverse ? 1 : pages,
+        currentPage: isReverse ? 1 : pages,
         todosOnPage: state.todosOnPage,
-        currentPage: state.currentPage,
       };
     }
     // отметить как выполенную
@@ -69,20 +66,19 @@ const items = (state = initialState, action) => {
           } : todo),
         ),
         isReverse: state.isReverse,
-        pageNumber: state.isReverse,
-        todosOnPage: state.todosOnPage,
         currentPage: state.currentPage,
+        todosOnPage: state.todosOnPage,
       };
     }
     // сменить страницу
     case SET_NUMBER_PAGE: {
-      const { pageNumber } = action.payload;
+      const { currentPage } = action.payload;
       return {
         todos: state.todos,
         isReverse: state.isReverse,
-        pageNumber,
+        // eslint-disable-next-line object-shorthand
+        currentPage: currentPage,
         todosOnPage: state.todosOnPage,
-        currentPage: state.currentPage,
       };
     }
     // задать количество записей на странице
@@ -91,9 +87,8 @@ const items = (state = initialState, action) => {
       return {
         todos: state.todos,
         isReverse: state.isReverse,
-        pageNumber: state.pageNumber,
-        todosOnPage,
         currentPage: state.currentPage,
+        todosOnPage,
       };
     }
     // изменить направление сортировки
@@ -101,9 +96,8 @@ const items = (state = initialState, action) => {
       return {
         todos: state.todos,
         isReverse: !state.isReverse,
-        pageNumber: state.pageNumber,
-        todosOnPage: state.todosOnPage,
         currentPage: state.currentPage,
+        todosOnPage: state.todosOnPage,
       };
     // неописанный экшн
     default: {
