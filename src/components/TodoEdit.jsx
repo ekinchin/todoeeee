@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import TodoList from '../containers/TodoList';
 import TodoInput from '../containers/TodoInput';
-import HeaderMenu from './HeaderMenu';
+import FileBlock from './FileBlock';
 import Paginator from '../containers/Paginator';
 // const todosDir = isReverse ? todos.map(todo => todo).reverse() : todos.map(todo => todo);
 // const todosView = todosDir.slice((pageNumber - 1) * todosOnPage, pageNumber * todosOnPage);
@@ -15,7 +15,7 @@ const TodoEdit = ({
     <TodoInput />
     <TodoList />
     <Paginator />
-    <HeaderMenu
+    <FileBlock
       onDownload={handlerFileDownload}
       onUpload={handleFileUpload}
     />
