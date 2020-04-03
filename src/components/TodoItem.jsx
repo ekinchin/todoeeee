@@ -5,7 +5,6 @@ import {
 } from 'react-bootstrap';
 
 const TodoItem = ({ todo, onRemove }) => (
-
   <Row className="justify-content-center align-items-center text-left my-3" noGutters="true">
     <Col className="col-auto mx-1">{todo.date}</Col>
     <Col className="col-6">
@@ -16,7 +15,7 @@ const TodoItem = ({ todo, onRemove }) => (
       </Card>
     </Col>
     <Col className="col-auto mx-1">
-      <Button variant="secondary" size="sm" onClick={onRemove(todo.id)}>Delete</Button>
+      <Button variant="secondary" size="sm" onClick={() => onRemove(todo.id)}>Delete</Button>
     </Col>
   </Row>
 );

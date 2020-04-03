@@ -6,11 +6,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-import TodoEdit from './components/TodoEdit';
+import TodoEdit from './containers/TodoEdit';
 
 import createStore from './store/store';
 
-const store = createStore();
+// eslint-disable-next-line no-underscore-dangle
+const store = createStore({}, window.__REDUX_DEVTOOLS_EXTENSION__
+  // eslint-disable-next-line no-underscore-dangle
+  && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>

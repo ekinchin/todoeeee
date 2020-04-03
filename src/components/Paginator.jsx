@@ -33,17 +33,17 @@ const Paginator = ({
             pageCount !== 1
               ? (
                 <Pagination size="sm">
-                  <Pagination.Item className={currentPage === 1 ? 'disabled' : null} key={1} onClick={onChangePage(1)}>
+                  <Pagination.Item className={currentPage === 1 ? 'disabled' : null} key={1} onClick={() => onChangePage(1)}>
                       Первая
                   </Pagination.Item>
                   {
                     items.map(item => (
-                      <Pagination.Item className={currentPage === item ? 'active' : null} key={item} onClick={onChangePage(item)}>
+                      <Pagination.Item className={currentPage === item ? 'active' : null} key={item} onClick={() => onChangePage(item)}>
                         { currentPage === item ? `${item} из ${pageCount}` : item }
                       </Pagination.Item>
                     ))
                   }
-                  <Pagination.Item className={currentPage === pageCount ? 'disabled' : null} key={pageCount} onClick={onChangePage(pageCount)}>
+                  <Pagination.Item className={currentPage === pageCount ? 'disabled' : null} key={pageCount} onClick={() => onChangePage(pageCount)}>
                       Последняя
                   </Pagination.Item>
                 </Pagination>
@@ -57,9 +57,9 @@ const Paginator = ({
           <span className="mr-1">Записей на странице:</span>
           <ButtonGroup size="sm" vertical>
             <DropdownButton size="sm" as={ButtonGroup} title={todosOnPage}>
-              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage(10)}>10</Dropdown.Item>
-              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage(20)}>20</Dropdown.Item>
-              <Dropdown.Item size="sm" onClick={onChangeTodosOnPage(30)}>30</Dropdown.Item>
+              <Dropdown.Item size="sm" onClick={() => onChangeTodosOnPage(10)}>10</Dropdown.Item>
+              <Dropdown.Item size="sm" onClick={() => onChangeTodosOnPage(20)}>20</Dropdown.Item>
+              <Dropdown.Item size="sm" onClick={() => onChangeTodosOnPage(30)}>30</Dropdown.Item>
             </DropdownButton>
           </ButtonGroup>
           <Button className="mx-3" size="sm" variant="primary" onClick={onReverse}>

@@ -3,7 +3,9 @@ import propTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import TodoItem from './TodoItem';
 
-const TodoList = ({ todos, onDone, onRemove }) => (
+const TodoList = ({
+  todos, onDone, onRemove,
+}) => (
   <Container fluid="true">
     {
       todos.map(
@@ -14,7 +16,6 @@ const TodoList = ({ todos, onDone, onRemove }) => (
     }
   </Container>
 );
-
 export default TodoList;
 
 TodoList.propTypes = {
