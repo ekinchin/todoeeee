@@ -1,5 +1,7 @@
+import fileDownload from 'js-file-download';
 import {
   APPEND_ITEM, REMOVE_ITEM, SET_NUMBER_PAGE, SET_ITEMS_ON_PAGE, DONE_ITEM, TOGGLE_SORT_DIRECTION,
+  DOWNLOAD_FILE, UPLOAD_FILE, UPLOAD_STATUS,
 } from '../actions';
 
 const initialState = {
@@ -76,8 +78,7 @@ const items = (state = initialState, action) => {
       return {
         todos: state.todos,
         isReverse: state.isReverse,
-        // eslint-disable-next-line object-shorthand
-        currentPage: currentPage,
+        currentPage,
         todosOnPage: state.todosOnPage,
       };
     }
@@ -99,6 +100,28 @@ const items = (state = initialState, action) => {
         currentPage: state.currentPage,
         todosOnPage: state.todosOnPage,
       };
+    // скачать
+    case DOWNLOAD_FILE: {
+      fileDownload(JSON.stringify(state.todos), 'history.json');
+      return state; }
+    // загрузить
+    case UPLOAD_FILE: {
+      const { status, todos } = action.payload;
+      switch (status) {
+        case UPLOAD_STATUS.READY: {
+          const pages = Math.ceil((todos.length + 1) / state.todosOnPage);
+          return {
+            todos,
+            isReverse: state.isReverse,
+            currentPage: state.isReverse ? 1 : pages,
+            todosOnPage: state.todosOnPage,
+          };
+        }
+        default: {
+          return state;
+        }
+      }
+    }
     // неописанный экшн
     default: {
       return state; }

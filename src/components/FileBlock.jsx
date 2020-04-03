@@ -11,8 +11,8 @@ const FileBlock = ({
   <Container fluid="true">
     <Row className="justify-content-center align-items-center my-3" noGutters="true">
       <ButtonGroup>
-        <input type="file" onChange={onUpload} />
-        <Button size="sm" variant="success" onClick={onDownload}>скачать</Button>
+        <input type="file" onChange={e => onUpload(e)} />
+        <Button size="sm" variant="success" onClick={() => onDownload()}>скачать</Button>
       </ButtonGroup>
     </Row>
   </Container>
