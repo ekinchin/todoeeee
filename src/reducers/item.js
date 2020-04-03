@@ -1,7 +1,7 @@
 import fileDownload from 'js-file-download';
 import {
   APPEND_ITEM, REMOVE_ITEM, SET_NUMBER_PAGE, SET_ITEMS_ON_PAGE, DONE_ITEM, TOGGLE_SORT_DIRECTION,
-  DOWNLOAD_FILE, UPLOAD_FILE, UPLOAD_STATUS,
+  DOWNLOAD_FILE, UPLOAD_FILE, UPLOAD_STATUS, SAVE_TO_STORAGE, RESTORE_FROM_STORAGE,
 } from '../actions';
 
 const initialState = {
@@ -9,6 +9,7 @@ const initialState = {
   currentPage: 1,
   todosOnPage: 30,
   isReverse: false,
+  isRestored: false,
 };
 
 const items = (state = initialState, action) => {
@@ -26,6 +27,7 @@ const items = (state = initialState, action) => {
       }
       input.current.value = '';
       const pages = Math.ceil((todos.length + 1) / todosOnPage);
+      const currentPage = isReverse ? 1 : pages;
       return {
         todos: [
           ...state.todos,
@@ -37,8 +39,9 @@ const items = (state = initialState, action) => {
           },
         ],
         isReverse: state.isReverse,
-        currentPage: isReverse ? 1 : pages,
+        currentPage,
         todosOnPage: state.todosOnPage,
+        isRestored: state.isRestored,
       };
     }
     // удалить запись
@@ -48,13 +51,15 @@ const items = (state = initialState, action) => {
       } = state;
       const { id } = action.payload;
       const pages = Math.ceil((todos.length + 1) / todosOnPage);
+      const currentPage = isReverse ? 1 : pages;
       return {
         todos: state.todos.filter(
           todo => todo.id !== id,
         ),
         isReverse: state.isReverse,
-        currentPage: isReverse ? 1 : pages,
+        currentPage,
         todosOnPage: state.todosOnPage,
+        isRestored: state.isRestored,
       };
     }
     // отметить как выполенную
@@ -70,6 +75,7 @@ const items = (state = initialState, action) => {
         isReverse: state.isReverse,
         currentPage: state.currentPage,
         todosOnPage: state.todosOnPage,
+        isRestored: state.isRestored,
       };
     }
     // сменить страницу
@@ -80,6 +86,7 @@ const items = (state = initialState, action) => {
         isReverse: state.isReverse,
         currentPage,
         todosOnPage: state.todosOnPage,
+        isRestored: state.isRestored,
       };
     }
     // задать количество записей на странице
@@ -90,6 +97,7 @@ const items = (state = initialState, action) => {
         isReverse: state.isReverse,
         currentPage: state.currentPage,
         todosOnPage,
+        isRestored: state.isRestored,
       };
     }
     // изменить направление сортировки
@@ -99,6 +107,7 @@ const items = (state = initialState, action) => {
         isReverse: !state.isReverse,
         currentPage: state.currentPage,
         todosOnPage: state.todosOnPage,
+        isRestored: state.isRestored,
       };
     // скачать
     case DOWNLOAD_FILE: {
@@ -115,12 +124,39 @@ const items = (state = initialState, action) => {
             isReverse: state.isReverse,
             currentPage: state.isReverse ? 1 : pages,
             todosOnPage: state.todosOnPage,
+            isRestored: state.isRestored,
           };
         }
         default: {
           return state;
         }
       }
+    }
+    case SAVE_TO_STORAGE: {
+      const {
+        todos, currentPage, todosOnPage, isReverse,
+      } = state;
+      localStorage.setItem('todos', JSON.stringify(todos));
+      localStorage.setItem('currentPage', JSON.stringify(currentPage));
+      localStorage.setItem('todosOnPage', JSON.stringify(todosOnPage));
+      localStorage.setItem('isReverse', JSON.stringify(isReverse));
+      return state;
+    }
+    case RESTORE_FROM_STORAGE: {
+      if (typeof localStorage.todos !== 'undefined' && typeof localStorage.isReverse !== 'undefined'
+      && typeof localStorage.todosOnPage !== 'undefined' && typeof localStorage.currentPage !== 'undefined') {
+        const {
+          todos, currentPage, todosOnPage, isReverse,
+        } = localStorage;
+        return {
+          todos: JSON.parse(todos),
+          currentPage: JSON.parse(currentPage),
+          todosOnPage: JSON.parse(todosOnPage),
+          isReverse: JSON.parse(isReverse),
+          isRestored: true,
+        };
+      }
+      return state;
     }
     // неописанный экшн
     default: {

@@ -6,6 +6,8 @@ export const SET_ITEMS_ON_PAGE = 'SET_ITEMS_ON_PAGE'; // задать колич
 export const SET_NUMBER_PAGE = 'SET_NUMBER_PAGE'; // задать номер текущей страницы
 export const DOWNLOAD_FILE = 'DOWNLOAD_FILE'; // задать количество записей на странице
 export const UPLOAD_FILE = 'UPLOAD_FILE'; // задать номер текущей страницы
+export const SAVE_TO_STORAGE = 'SAVE_TO_STORAGE'; // сохранить состояние в локальный сторадж браузера
+export const RESTORE_FROM_STORAGE = 'RESTORE_FROM_STORAGE'; // восстановаить состояние из стораджа браузера
 
 export const UPLOAD_STATUS = {
   REQUEST: 'REQUEST', FETCHING: 'FETCHING', READY: 'READY', FAIL: 'FAIL',
@@ -78,4 +80,11 @@ export const setItemsOnPage = todosOnPage => ({
 export const setPage = currentPage => ({
   type: SET_NUMBER_PAGE,
   payload: { currentPage },
+});
+export const saveToStorage = () => ({
+  type: SAVE_TO_STORAGE,
+});
+
+export const restoreFromStorage = () => ({
+  type: RESTORE_FROM_STORAGE,
 });

@@ -6,7 +6,6 @@ import {
 
 const TodoInput = ({ onAppend }) => {
   const input = React.createRef();
-
   return (
     <Container fluid="true">
       <Row noGutters="true" className="justify-content-center align-items-center text-left my-3">
