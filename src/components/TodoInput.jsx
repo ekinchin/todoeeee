@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/no-autofocus */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import propTypes from 'prop-types';
 import {
@@ -13,7 +12,7 @@ const TodoInput = ({ onAppend }) => {
       <Row noGutters="true" className="justify-content-center align-items-center text-left my-3">
         <Col className="col-8">
           <InputGroup size="sm">
-            <input type="text" className="form-control" ref={input} placeholder="ТуДу ждет" autoFocus />
+            <textarea type="text" className="form-control" ref={input} placeholder="ТуДу ждет" autoFocus />
             <InputGroup.Append>
               <Button variant="primary" size="sm" onClick={() => onAppend(input)}>
               Добавить
