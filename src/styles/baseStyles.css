@@ -1,0 +1,67 @@
+:baseColor{
+    --white-1:#e0e0e0;
+    --white-2:#e2e2e2;
+    --white-3:#e4e4e4;
+    --white-4:#e6e6e6;
+    --white-5:#e8e8e8;
+    --white-6:#eaeaea;
+    --white-7:#ececec;
+    --white-8:#eeeeee;
+    --white-9:#f0f0f0;
+    --white-10:#ffffff;
+
+    --black-1:#000000;
+    --black-2:#020202;
+    --black-3:#040404;
+    --black-4:#060606;
+    --black-5:#080808;
+    --black-6:#0a0a0a;
+    --black-7:#0c0c0c;
+    --black-8:#0e0e0e;
+    --black-9:#101010;
+    --black-10:#1f1f1f;
+
+    --grey-1:#505050;
+    --grey-2:#606060;
+    --grey-3:#707070;
+    --grey-4:#808080;
+    --grey-5:#909090;
+    --grey-6:#a0a0a0;
+    --grey-7:#b0b0b0;
+    --grey-8:#c0c0c0;
+    --grey-9:#d0d0d0;
+    --grey-10:#e0e0e0;
+
+    --red-1:#ff1010;
+    --red-2:#ff2020;
+    --red-3:#ff3030;
+    --red-4:#ff4040;
+    --red-5:#ff5050;
+    --red-6:#ff6060;
+    --red-7:#ff7070;
+    --red-8:#ff8080;
+    --red-9:#ff9090;
+    --red-10:#ffa0a0;
+
+    --green-1:#10ff10;
+    --green-2:#20ff20;
+    --green-3:#30ff30;
+    --green-4:#40ff40;
+    --green-5:#50ff50;
+    --green-6:#60ff60;
+    --green-7:#70ff70;
+    --green-8:#80ff80;
+    --green-9:#90ff90;
+    --green-10:#a0ffa0;
+
+    --blue-1:#1010ff;
+    --blue-2:#2020ff;
+    --blue-3:#3030ff;
+    --blue-4:#4040ff;
+    --blue-5:#5050ff;
+    --blue-6:#6060ff;
+    --blue-7:#7070ff;
+    --blue-8:#8080ff;
+    --blue-9:#9090ff;
+    --blue-10:#a0a0ff;
+}
