@@ -1,0 +1,35 @@
+@import "../../styles/baseStyles.css";
+
+.formInput {
+    width: 60%;
+    margin:auto;
+}
+
+.formInput--input {
+    background: var(--grey-10);
+    border-radius: 16px;
+    width: calc( 100% - 130px );
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 0 0 0 12px;
+    font-size: 1.2em;
+    margin: 0;
+    margin-right: 10px; 
+}
+
+.formInput--input:hover {
+    border: 1px solid var(--grey-10);
+    box-shadow: 0 0 8px var(--grey-1);
+}
+
+.formInput--submit {
+    width: 120px;
+    height: 40px;
+    border-radius: 16px;
+    background: var(--green-5);
+    font-size: 1.2em;
+    border: none;
+    color: var(--black-1);
+    padding: 0;
+}
