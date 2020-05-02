@@ -4,7 +4,6 @@ import { restoreFromStorage, saveToStorage } from '../actions';
 
 
 const mapStateToProps = state => ({
-  isRestored: state.items.isRestored,
   state,
 });
 

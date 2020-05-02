@@ -7,13 +7,18 @@ import FileBlock from '../containers/FileBlock';
 import Paginator from '../containers/Paginator';
 
 const TodoEdit = ({
-  saveToStorage, restoreFromStorage, isRestored, state,
+  saveToStorage, restoreFromStorage, state,
 }) => {
+  // восстановление записей из локального стора при монтировании компонента
   useEffect(() => {
-    // restore
-    if (!isRestored) { restoreFromStorage(); }
+    restoreFromStorage();
+  }, []);
+
+  // сохранение записей в локальный стор
+  useEffect(() => {
     saveToStorage();
   }, [state]);
+
   return (
     <Container fluid="falses">
       <TodoInput />
@@ -29,6 +34,5 @@ export default TodoEdit;
 TodoEdit.propTypes = {
   saveToStorage: propTypes.func.isRequired,
   restoreFromStorage: propTypes.func.isRequired,
-  isRestored: propTypes.bool.isRequired,
   state: propTypes.objectOf(propTypes.any).isRequired,
 };
