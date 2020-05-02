@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import propTypes from 'prop-types';
-import { Container } from 'react-bootstrap';
 import TodoList from '../../containers/TodoList';
 import TodoInput from '../../containers/TodoInput';
 import FileBlock from '../../containers/FileBlock';
@@ -21,12 +20,12 @@ const TodoEdit = ({
   }, [state]);
 
   return (
-    <Container fluid="falses">
+    <div className="todoEdit">
       <TodoInput />
       <TodoList />
       <Paginator />
       <FileBlock />
-    </Container>
+    </div>
   );
 };
 

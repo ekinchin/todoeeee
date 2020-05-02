@@ -1,1 +1,8 @@
 @import "../../styles/baseStyles.css";
+
+.todoEdit {
+    background: var(--grey-9);
+    max-width: 60%;
+    margin:auto;
+    padding:20px;
+}
