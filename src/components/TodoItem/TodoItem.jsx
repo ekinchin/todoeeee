@@ -8,8 +8,10 @@ const TodoItem = ({ todo, onRemove }) => (
     <span className="item--date">
       {format(todo.id, 'MM.dd.yyyy HH:MM:SS')}
     </span>
-    <span className="item--text">{todo.text}</span>
-    <button className="item--closeButton" type="button" onClick={() => onRemove(todo.id)}>Delete</button>
+    <div className="item--text">
+      <span>{todo.text}</span>
+      <button className="item--closeButton" type="button" onClick={() => onRemove(todo.id)}>Delete</button>
+    </div>
   </div>
 );
 
