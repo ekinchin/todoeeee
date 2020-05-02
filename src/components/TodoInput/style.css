@@ -3,6 +3,7 @@
 .formInput {
     width: 60%;
     margin:auto;
+    margin-bottom: 40px;
 }
 
 .formInput--input {

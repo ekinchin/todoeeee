@@ -1,27 +1,16 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { format } from 'date-fns';
-
-import {
-  Row, Col, Button, Card,
-} from 'react-bootstrap';
+import './style.css';
 
 const TodoItem = ({ todo, onRemove }) => (
-  <Row className="justify-content-center align-items-center text-left my-3" noGutters="true">
-    <Col className="col-auto mx-1">
+  <div className="item">
+    <span className="item--date">
       {format(todo.id, 'MM.dd.yyyy HH:MM:SS')}
-    </Col>
-    <Col className="col-6">
-      <Card bg="light" text="dark">
-        <Card.Body className="p-1">
-          <Card.Text>{todo.text}</Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
-    <Col className="col-auto mx-1">
-      <Button variant="secondary" size="sm" onClick={() => onRemove(todo.id)}>Delete</Button>
-    </Col>
-  </Row>
+    </span>
+    <span className="item--text">{todo.text}</span>
+    <button className="item--closeButton" type="button" onClick={() => onRemove(todo.id)}>Delete</button>
+  </div>
 );
 
 export default TodoItem;
