@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import propTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
-import TodoList from '../containers/TodoList';
-import TodoInput from '../containers/TodoInput';
-import FileBlock from '../containers/FileBlock';
-import Paginator from '../containers/Paginator';
+import TodoList from '../../containers/TodoList';
+import TodoInput from '../../containers/TodoInput';
+import FileBlock from '../../containers/FileBlock';
+import Paginator from '../../containers/Paginator';
+import './style.css';
 
 const TodoEdit = ({
   saveToStorage, restoreFromStorage, state,
