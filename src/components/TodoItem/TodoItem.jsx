@@ -10,7 +10,7 @@ const TodoItem = ({ todo, onRemove }) => (
     </span>
     <div className="item--text">
       <span>{todo.text}</span>
-      <button className="item--closeButton" type="button" onClick={() => onRemove(todo.id)}>Delete</button>
+      <button className="item--closeButton" type="button" onClick={() => onRemove(todo.id)}>x</button>
     </div>
   </div>
 );

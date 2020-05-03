@@ -6,7 +6,7 @@
     margin: auto;
     position: relative;
     padding-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .item--date {
@@ -19,35 +19,39 @@
 
 .item--text {
     background: var(--grey-10);
-
+    color: var(--black-10);
     padding-left: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-right: 100px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
     border-radius: 16px;
     min-height: 40px;
     display: flex;
     align-items: center;
     text-align: left;
-    line-height: 100%;
+    line-height: 20px;
+}
+.item--text:hover {
+    border: 1px solid var(--grey-10);
+    box-shadow: 0 0 8px var(--grey-1);
 }
 
 .item--closeButton {
-    opacity: 0.3;
     position: absolute;
+    opacity: 0.5;
     right: 0;
     top: 20px;
-    display: block;
-    width: 100px;
-    height: 40px;
+    display: none;
+    width: 32px;
+    height: 32px;
     border-radius: 16px;
-    background: var(--red-5);
+    background: var(--red-8);
     font-size: 1.2em;
     border: none;
     color: var(--black-1);
     padding: 0;
 }
 
-.item--closeButton:hover {
-    opacity: 1;
+.item--text:hover .item--closeButton{
+    display: block;
 }

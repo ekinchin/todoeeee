@@ -9,7 +9,7 @@ const TodoInput = ({ onAppend }) => {
     <form id="userinput" className="formInput">
       <input type="text" className="formInput--input" ref={input} placeholder="ТуДу ждет" autoFocus />
       <button type="submit" className="formInput--submit" form="userinput" onClick={(e) => { e.preventDefault(); onAppend(input); }}>
-          Добавить
+          +
       </button>
     </form>
   );
