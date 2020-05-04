@@ -31,7 +31,6 @@
     height: 32px;
     border-radius: 16px;
     background: var(--green-5);
-    font-size: 1.2em;
     border: none;
     color: var(--black-1);
     padding: 0;
@@ -39,8 +38,28 @@
     right: 0;
     top:0;
 }
+.formInput--submit--deco{
+    width: 32px;
+    height: 32px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+.formInput--submit--deco span {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    line-height: 32px;
+}
 
 .formInput:hover .formInput--submit {
-    display: block;
+    display: inline-block;
     opacity: 0.5;
 }

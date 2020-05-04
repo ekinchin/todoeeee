@@ -46,10 +46,11 @@
     height: 32px;
     border-radius: 16px;
     background: var(--red-8);
-    font-size: 1.2em;
+    font-size: 1em;
     border: none;
     color: var(--black-1);
     padding: 0;
+    line-height: 32px;
 }
 
 .item--text:hover .item--closeButton{
