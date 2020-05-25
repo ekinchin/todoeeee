@@ -1,8 +1,21 @@
 @import "../../styles/baseStyles.css";
 
-.todoEdit {
-    background: var(--grey-9);
-    max-width: 60%;
-    margin:auto;
-    padding:20px;
+.paginator {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.paginator--item {
+  margin-right: 10px;
+  display: block;
+}
+
+.paginator--button {
+  height: 40px;
+  min-width: 40px;
+  border-radius: 40px;
+  border: none;
+  background: var(--grey-8);
+  padding: 0 10px 0 10px;
 }

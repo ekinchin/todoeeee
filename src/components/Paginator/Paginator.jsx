@@ -1,9 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import propTypes from 'prop-types';
-import {
-  Pagination, Container, Row, Col, Button, ButtonGroup, DropdownButton, Dropdown,
-} from 'react-bootstrap';
 import './style.css';
 
 // eslint-disable-next-line no-unused-vars
@@ -27,48 +25,27 @@ const Paginator = ({
     }
   }
   return (
-    <Container>
-      <Row className="justify-content-md-center align-items-top text-left" noGutters="true">
-        <Col className="col-auto">
+    pageCount !== 1
+      ? (
+        <ul className="paginator">
+          <li className="paginator--item" key={1} type="none">
+            <button className="paginator--button" type="button" onClick={() => onChangePage(1)}>Первая</button>
+          </li>
           {
-            pageCount !== 1
-              ? (
-                <Pagination size="sm">
-                  <Pagination.Item className={currentPage === 1 ? 'disabled' : null} key={1} onClick={() => onChangePage(1)}>
-                      Первая
-                  </Pagination.Item>
-                  {
-                    items.map(item => (
-                      <Pagination.Item className={currentPage === item ? 'active' : null} key={item} onClick={() => onChangePage(item)}>
-                        { currentPage === item ? `${item} из ${pageCount}` : item }
-                      </Pagination.Item>
-                    ))
-                  }
-                  <Pagination.Item className={currentPage === pageCount ? 'disabled' : null} key={pageCount} onClick={() => onChangePage(pageCount)}>
-                      Последняя
-                  </Pagination.Item>
-                </Pagination>
-              )
-              : null
+            items.map(item => (
+              <li className="paginator--item" key={item} type="none">
+                <button className="paginator--button" type="button" onClick={() => onChangePage(item)}>
+                  {currentPage === item ? `${item} из ${pageCount}` : item}
+                </button>
+              </li>
+            ))
           }
-        </Col>
-      </Row>
-      <Row className="justify-content-md-center align-items-top text-left" noGutters="true">
-        <Col className="col-auto">
-          <span className="mr-1">Записей на странице:</span>
-          <ButtonGroup size="sm" vertical>
-            <DropdownButton size="sm" as={ButtonGroup} title={todosOnPage}>
-              <Dropdown.Item size="sm" onClick={() => onChangeTodosOnPage(10)}>10</Dropdown.Item>
-              <Dropdown.Item size="sm" onClick={() => onChangeTodosOnPage(20)}>20</Dropdown.Item>
-              <Dropdown.Item size="sm" onClick={() => onChangeTodosOnPage(30)}>30</Dropdown.Item>
-            </DropdownButton>
-          </ButtonGroup>
-          <Button className="mx-3" size="sm" variant="primary" onClick={onReverse}>
-            {isReverse ? 'От новых к старым' : 'От старых к новым'}
-          </Button>
-        </Col>
-      </Row>
-    </Container>
+          <li className="paginator--item" type="none">
+            <button className="paginator--button" type="button" onClick={() => onChangePage(pageCount)}>Последняя</button>
+          </li>
+        </ul>
+      )
+      : null
   );
 };
 
