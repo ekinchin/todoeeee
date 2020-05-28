@@ -1,0 +1,67 @@
+:root{
+    --white-1:#e0e0e0;
+    --white-2:#e2e2e2;
+    --white-3:#e4e4e4;
+    --white-4:#e6e6e6;
+    --white-5:#e8e8e8;
+    --white-6:#eaeaea;
+    --white-7:#ececec;
+    --white-8:#eeeeee;
+    --white-9:#f0f0f0;
+    --white-10:#ffffff;
+
+    --black-1:#000000;
+    --black-2:#020202;
+    --black-3:#040404;
+    --black-4:#060606;
+    --black-5:#080808;
+    --black-6:#0a0a0a;
+    --black-7:#0c0c0c;
+    --black-8:#0e0e0e;
+    --black-9:#101010;
+    --black-10:#1f1f1f;
+
+    --grey-1:#505050;
+    --grey-2:#606060;
+    --grey-3:#707070;
+    --grey-4:#808080;
+    --grey-5:#909090;
+    --grey-6:#a0a0a0;
+    --grey-7:#b0b0b0;
+    --grey-8:#c0c0c0;
+    --grey-9:#d0d0d0;
+    --grey-10:#e0e0e0;
+
+    --red-1:#6f0000;
+    --red-2:#7f0000;
+    --red-3:#8f0000;
+    --red-4:#9f0000;
+    --red-5:#af0000;
+    --red-6:#bf0000;
+    --red-7:#cf0000;
+    --red-8:#df0000;
+    --red-9:#ef0000;
+    --red-10:#ff0000;
+
+    --green-1:#006f00;
+    --green-2:#007f00;
+    --green-3:#008f00;
+    --green-4:#009f00;
+    --green-5:#00af00;
+    --green-6:#00bf00;
+    --green-7:#00cf00;
+    --green-8:#00df00;
+    --green-9:#00ef00;
+    --green-10:#00ff00;
+
+    --blue-1:#00006f;
+    --blue-2:#00007f;
+    --blue-3:#00008f;
+    --blue-4:#00009f;
+    --blue-5:#0000af;
+    --blue-6:#0000bf;
+    --blue-7:#0000cf;
+    --blue-8:#0000df;
+    --blue-9:#0000ef;
+    --blue-10:#0000ff;
+}

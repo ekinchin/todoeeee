@@ -1,12 +1,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { Container } from 'react-bootstrap';
-import TodoItem from './TodoItem';
+import TodoItem from '../TodoItem';
+import './style.css';
 
 const TodoList = ({
   todos, onDone, onRemove,
 }) => (
-  <Container fluid="true">
+  <React.Fragment>
     {
       todos.map(
         todo => (
@@ -14,7 +14,7 @@ const TodoList = ({
         ),
       )
     }
-  </Container>
+  </React.Fragment>
 );
 export default TodoList;
 
