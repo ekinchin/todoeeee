@@ -14,8 +14,6 @@
 }
 
 .formInput--input {
-  box-sizing: border-box;
-  box-sizing: border-box;
   background: var(--white-8);
   color: var(--black-10);
   border-radius: 16px;
