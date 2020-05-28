@@ -1,15 +1,17 @@
 @import "../../styles/baseStyles.css";
 
 .paginator {
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
+  margin:0;
+  padding:0;
 }
 
 .paginator--item {
-  margin-right: 10px;
   display: block;
+  margin-right: 10px;
 }
 
 .paginator--button {
