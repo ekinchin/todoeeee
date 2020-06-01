@@ -5,7 +5,7 @@ import propTypes from 'prop-types';
 import './style.css';
 
 const Button = ({ onClick, label = '' }) => (
-  <button className="fileBlock--button" type="button" onClick={() => onClick()}>{label}</button>
+  <button className="button" type="button" onClick={() => onClick()}>{label}</button>
 );
 
 export default Button;
