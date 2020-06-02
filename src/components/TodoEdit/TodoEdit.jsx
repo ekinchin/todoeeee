@@ -27,7 +27,7 @@ const TodoEdit = ({
       <TodoList />
       <div className="footer">
         <Paginator className="footer--item" />
-        <Button className="footer--item" onClick={toggleSortDirection} label="сортировка" />
+        <Button className="footer--item" onClick={toggleSortDirection} label="От старых к новым" altLabel="От новых к старым" state={state.items.isReverse} />
         <FileBlock className="footer--item" />
       </div>
     </div>
