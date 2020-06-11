@@ -5,6 +5,7 @@ import TodoInput from '../../containers/TodoInput';
 import FileBlock from '../../containers/FileBlock';
 import Paginator from '../../containers/Paginator';
 import Button from '../Button';
+import SelectButton from '../SelectButton';
 
 import './style.css';
 
@@ -28,6 +29,7 @@ const TodoEdit = ({
       <div className="footer">
         <Paginator className="footer--item" />
         <Button className="footer--item" onClick={toggleSortDirection} label="От старых к новым" altLabel="От новых к старым" state={state.items.isReverse} />
+        <SelectButton />
         <FileBlock className="footer--item" />
       </div>
     </div>

@@ -1,5 +1,13 @@
 @import "../../styles/baseStyles.css";
 
 .selectButton {
-  display: flex;
+outline: none;
+background-color: var(--grey-8);
+border-radius: 16px;
+border: none;
+padding: 10px;
+}
+
+.selectButton--option {
+  padding:10px;
 }
