@@ -12,7 +12,7 @@ export default SelectButton;
 
 SelectButton.defaultProps = {
   pairs: [{ label: 1, value: 11 }, { label: 2, value: 12 }, { label: 3, value: 13 }],
-  onSelect: (value) => { console.log(value); },
+  onSelect: () => { },
 };
 
 SelectButton.propTypes = {
