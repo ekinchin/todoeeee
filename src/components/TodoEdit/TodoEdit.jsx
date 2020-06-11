@@ -33,7 +33,7 @@ const TodoEdit = ({
           <span>К-во элементов</span>
           <SelectButton pairs={selectList} onSelect={setItemsOnPage} />
         </div>
-        <FileBlock className="footer--item" />
+        <FileBlock />
       </div>
     </div>
   );
