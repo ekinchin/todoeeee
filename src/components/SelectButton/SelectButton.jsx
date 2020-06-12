@@ -3,7 +3,12 @@ import propTypes from 'prop-types';
 import './style.css';
 
 const SelectButton = ({ pairs, onSelect }) => (
-  <select className="selectButton" onChange={e => onSelect(e.target.value)}>
+  <select
+    className="selectButton"
+    onChange={(e) => {
+      onSelect(Number.parseInt(e.target.value, 10));
+    }}
+  >
     {pairs.map(pair => <option className="selectButton--option" key={pair.label} value={pair.value}>{pair.label}</option>)}
   </select>
 );
