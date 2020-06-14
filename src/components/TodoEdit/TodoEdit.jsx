@@ -5,11 +5,12 @@ import TodoInput from '../../containers/TodoInput';
 import FileBlock from '../../containers/FileBlock';
 import Paginator from '../../containers/Paginator';
 import Button from '../Button';
+import SelectButton from '../SelectButton';
 
 import './style.css';
 
 const TodoEdit = ({
-  saveToStorage, restoreFromStorage, toggleSortDirection, state,
+  saveToStorage, restoreFromStorage, toggleSortDirection, state, setItemsOnPage,
 }) => {
   // восстановление записей из локального стора при монтировании компонента
   useEffect(() => {
@@ -20,15 +21,23 @@ const TodoEdit = ({
   useEffect(() => {
     saveToStorage();
   }, [state]);
-
+  const selectList = [
+    { label: 10, value: 10, active: state.items.todosOnPage === 10 },
+    { label: 20, value: 20, active: state.items.todosOnPage === 20 },
+    { label: 30, value: 30, active: state.items.todosOnPage === 30 },
+  ];
   return (
     <div className="todoEdit">
       <TodoInput />
       <TodoList />
       <div className="footer">
-        <Paginator className="footer--item" />
-        <Button className="footer--item" onClick={toggleSortDirection} label="От старых к новым" altLabel="От новых к старым" state={state.items.isReverse} />
-        <FileBlock className="footer--item" />
+        <Paginator />
+        <Button onClick={toggleSortDirection} label="От старых к новым" altLabel="От новых к старым" state={state.items.isReverse} />
+        <div className="footer--item">
+          <span>К-во элементов</span>
+          <SelectButton pairs={selectList} onSelect={setItemsOnPage} />
+        </div>
+        <FileBlock />
       </div>
     </div>
   );
@@ -41,4 +50,5 @@ TodoEdit.propTypes = {
   restoreFromStorage: propTypes.func.isRequired,
   toggleSortDirection: propTypes.func.isRequired,
   state: propTypes.objectOf(propTypes.any).isRequired,
+  setItemsOnPage: propTypes.func.isRequired,
 };

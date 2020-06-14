@@ -2,9 +2,6 @@ import { connect } from 'react-redux';
 import Paginator from '../components/Paginator';
 import { toggleSortDirection, setItemsOnPage, setPage } from '../actions';
 
-
-//  currentPage, pageCount, onChangePage, todosOnPage, onChangeTodosOnPage, onReverse, isReverse,
-
 // eslint-disable-next-line max-len
 const pageCountCalc = (itemsCount, todosOnPage) => (itemsCount === 0 ? 1 : Math.ceil(itemsCount / todosOnPage));
 
