@@ -6,7 +6,7 @@ import './style.css';
 const TodoItem = ({ todo, onRemove }) => (
   <div className="item">
     <span className="item--date">
-      {format(todo.id, 'MM.dd.yyyy HH:MM:SS')}
+      {format(todo.id, 'dd.MM.yyyy HH:MM:SS')}
     </span>
     <div className="item--text">
       <span>{todo.text}</span>
