@@ -21,7 +21,11 @@ const TodoEdit = ({
   useEffect(() => {
     saveToStorage();
   }, [state]);
-  const selectList = [{ label: 10, value: 10 }, { label: 20, value: 20 }, { label: 30, value: 30 }];
+  const selectList = [
+    { label: 10, value: 10, active: state.items.todosOnPage === 10 },
+    { label: 20, value: 20, active: state.items.todosOnPage === 20 },
+    { label: 30, value: 30, active: state.items.todosOnPage === 30 },
+  ];
   return (
     <div className="todoEdit">
       <TodoInput />
