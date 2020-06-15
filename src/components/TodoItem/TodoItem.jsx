@@ -9,7 +9,7 @@ const locale = { locale: navigator.language === 'ru-RU' ? ru : enGB }; // пол
 const TodoItem = ({ todo, onRemove }) => (
   <div className="item">
     <span className="item--date">
-      {format(todo.id, 'dd MMMM yyyy HH:MM:SS', locale).toLocaleLowerCase()}
+      {format(todo.id, 'd MMMM yyyy HH:MM:SS', locale).toLocaleLowerCase()}
     </span>
     <div className="item--text">
       <span>{todo.text}</span>
