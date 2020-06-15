@@ -16,19 +16,20 @@
 .formInput--input {
   background: var(--white-8);
   color: var(--black-10);
+  border: 1px solid var(--grey-10);
   border-radius: 16px;
   width: 100%;
   padding: 0 16px 0 16px;
   height: 64px;
-  border: none;
+  /* border: none; */
   outline: none;
   font-size: 1.2em;
   margin: 0;
 }
 
 .formInput--input:hover {
-  border: 1px solid var(--grey-10);
-  box-shadow: 0 0 8px var(--grey-1);
+  /* box-shadow: 0 0 8px var(--grey-1); */
+  border: 1px solid var(--grey-5);
 }
 
 .formInput--submit {

@@ -19,6 +19,7 @@
 
 .item--text {
     background: var(--grey-10);
+    border: 1px solid var(--grey-10);
     color: var(--black-10);
     padding-left: 16px;
     padding-top: 16px;
@@ -32,8 +33,8 @@
     line-height: 20px;
 }
 .item--text:hover {
-    border: 1px solid var(--grey-10);
-    box-shadow: 0 0 8px var(--grey-1);
+    /* box-shadow: 0 0 8px var(--grey-1); */
+    border: 1px solid var(--grey-5);
 }
 
 .item--closeButton {

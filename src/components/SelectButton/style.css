@@ -3,11 +3,16 @@
 .selectButton {
 outline: none;
 background-color: var(--grey-8);
+border: 1px solid var(--grey-8);
+cursor: pointer;
 border-radius: 16px;
-border: none;
 padding: 10px;
 }
 
 .selectButton--option {
   padding:10px;
+}
+
+.selectButton:hover {
+  border: 1px solid var(--grey-5);
 }
