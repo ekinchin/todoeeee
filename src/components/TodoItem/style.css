@@ -32,7 +32,6 @@
     line-height: 20px;
 }
 .item--text:hover {
-    border: 1px solid var(--grey-10);
     box-shadow: 0 0 8px var(--grey-1);
 }
 
