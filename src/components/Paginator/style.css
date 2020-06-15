@@ -18,7 +18,11 @@
   height: 40px;
   min-width: 40px;
   border-radius: 40px;
-  border: none;
+  border: 1px solid var(--grey-8);
   background: var(--grey-8);
   padding: 0 10px 0 10px;
+  cursor: pointer;
+}
+.paginator--button:hover {
+  border: 1px solid var(--grey-5);
 }
