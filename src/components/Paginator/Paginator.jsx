@@ -27,11 +27,12 @@ const Paginator = ({
   return (
     pageCount !== 1
       ? (
-        <ul className="paginator">
-          <li className="paginator--item" key={1} type="none">
-            <button className="paginator--button" type="button" onClick={() => onChangePage(1)}>Первая</button>
-          </li>
-          {
+        <nav>
+          <ul className="paginator">
+            <li className="paginator--item" key={1} type="none">
+              <button className="paginator--button" type="button" onClick={() => onChangePage(1)}>Первая</button>
+            </li>
+            {
             items.map(item => (
               <li className="paginator--item" key={item} type="none">
                 <button className="paginator--button" type="button" onClick={() => onChangePage(item)}>
@@ -40,10 +41,11 @@ const Paginator = ({
               </li>
             ))
           }
-          <li className="paginator--item" type="none">
-            <button className="paginator--button" type="button" onClick={() => onChangePage(pageCount)}>Последняя</button>
-          </li>
-        </ul>
+            <li className="paginator--item" type="none">
+              <button className="paginator--button" type="button" onClick={() => onChangePage(pageCount)}>Последняя</button>
+            </li>
+          </ul>
+        </nav>
       )
       : null
   );

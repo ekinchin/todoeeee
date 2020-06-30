@@ -7,7 +7,7 @@ import './style.css';
 const locale = { locale: navigator.language === 'ru-RU' ? ru : enGB }; // получить локаль браузера
 
 const TodoItem = ({ todo, onRemove }) => (
-  <div className="item">
+  <article className="item">
     <span className="item--date">
       {format(todo.id, 'd MMMM yyyy HH:MM:SS', locale).toLocaleLowerCase()}
     </span>
@@ -15,7 +15,7 @@ const TodoItem = ({ todo, onRemove }) => (
       <span>{todo.text}</span>
       <button className="item--closeButton" type="button" onClick={() => onRemove(todo.id)}>X</button>
     </div>
-  </div>
+  </article>
 );
 
 export default TodoItem;

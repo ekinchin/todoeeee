@@ -28,9 +28,9 @@ const TodoEdit = ({
   ];
   return (
     <div className="todoEdit">
-      <TodoInput />
-      <TodoList />
-      <div className="footer">
+      <header><TodoInput /></header>
+      <div><TodoList /></div>
+      <footer className="footer">
         <Paginator />
         <Button onClick={toggleSortDirection} label="От старых к новым" altLabel="От новых к старым" state={state.items.isReverse} />
         <div className="footer--item">
@@ -38,7 +38,7 @@ const TodoEdit = ({
           <SelectButton pairs={selectList} onSelect={setItemsOnPage} />
         </div>
         <FileBlock />
-      </div>
+      </footer>
     </div>
   );
 };
