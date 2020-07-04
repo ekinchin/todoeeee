@@ -31,13 +31,17 @@ const TodoEdit = ({
       <header><TodoInput /></header>
       <div><TodoList /></div>
       <footer className="footer">
-        <Paginator />
-        <Button onClick={toggleSortDirection} label="От старых к новым" altLabel="От новых к старым" state={state.items.isReverse} />
-        <div className="footer--item">
-          <span>К-во элементов</span>
-          <SelectButton pairs={selectList} onSelect={setItemsOnPage} />
+        <div className="footer--row">
+          <Paginator />
+          <Button onClick={toggleSortDirection} label="От старых к новым" altLabel="От новых к старым" state={state.items.isReverse} />
         </div>
-        <FileBlock />
+        <div className="footer--row">
+          <div className="footer--row__total">
+            <span>Отображать:</span>
+            <SelectButton pairs={selectList} onSelect={setItemsOnPage} />
+          </div>
+          <FileBlock />
+        </div>
       </footer>
     </div>
   );

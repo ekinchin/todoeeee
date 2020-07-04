@@ -9,12 +9,23 @@
 
 .footer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-items: space-between;
+    justify-items: center;
 }
 
-.footer--item {
+.footer--row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer--row__total span {
+    margin-right: 10px;
+}
+.footer--row__total {
     margin-right: 20px;
 }
 
