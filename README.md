@@ -4,6 +4,14 @@
 
 Приложение исполняется исключительна в браузере, для хранения данных использует его localstore.
 
+Особенности:
+1. JavaScript;
+1. React (с хуками);
+1. Redux, Redux-thunk;
+1. хранение в localstorage;
+1. eslint (airbnb);
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
