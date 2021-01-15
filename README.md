@@ -10,7 +10,13 @@
 1. Redux, Redux-thunk;
 1. хранение в localstorage;
 1. eslint (airbnb);
+1. готовый Dockerfile.
 
+Планы:
+1. переверстать с учетом a11y;
+1. завязать на разработанный backend, оставив возможность работы в localstorage браузера;
+1. поработать со стилизацией компонентов;
+1. поработать с адаптивностью верстки.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
